@@ -15,7 +15,7 @@ def create_names(fake):
         genProfile = fake.profile()
         go = es.index(
             index="profiles",
-            doc_type="users",
+            #doc_type="users",
             id=genUname,
             body={
                 "name": genName,
@@ -26,7 +26,7 @@ def create_names(fake):
                 "timestamp": datetime.now()
             }
         )
-        print json.dumps(go)
+        print(json.dumps(go))
 if __name__ == '__main__':
     fake = Factory.create()
     create_names(fake)
